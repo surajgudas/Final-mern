@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Paytm Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="login-section1">
+    <nav class="upbar">
+      <h1>Paytm UPI</h1>
+      <div class="nav-controls">
+        <ul>
+          <li><a href="#" aria-label="Home">Home</a></li>
+          <li><a href="#" aria-label="Company">Company</a></li>
+          <li><a href="#" aria-label="Career">Career</a></li>
+          <li><a href="#" aria-label="About">About</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <button id="registerr" type="button" aria-label="Register">Register</button>
+          <button id="loginn" type="button" aria-label="Login">Login</button>
+        </div>
+      </div>
+    </nav>
+    <section class="login-box" style="display: none;">
+      <div class="sign-up">
+        <h1>Sign up</h1>
+        <form id="login-form1">
+          <label>
+          <input type="text" placeholder="First name" required aria-label="First name"/><br>
+          <input type="text" placeholder="Last name" required aria-label="Last name"/><br>
+          <input type="email" placeholder="Email" required aria-label="Email"/><br>
+          <input type="password" placeholder="Password" required aria-label="Password"/><br>
+        </label>
+        <button type="submit">Register</button>
+        </form>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="login-section2" style="display: none;">
+      <center>
+        <h2>Welcome to PayTM</h2>
+        <form id="login-form2">
+            <label>
+                <div>
+                <input type="email" placeholder="Enter Email" required aria-label="Enter Email"><br>
+              
+            <div><input type="password" placeholder="Enter Password" required aria-label="Enter Password"><br></div>
+          </label><br>
+          <button type="submit">Proceed</button>
+        </form>
+      </center>
+    </section>
+
+    <header class="paytm-header" style="display: none;">
+        <h1>Paytm UPI</h1>
+    </header>
+
+    <section class="main-section" style="display: none;">
+        <div class="upi-info">
+            <span>UPI Lite: <a href="#">Activate</a></span>
+            <span>UPI ID: xxxxxxxxxx@paytm</span>
+        </div>
+
+        <div class="services-grid">
+            <div class="service">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAO9JREFUSEvt1jFKA0EUxvFfAqawimexCen0DIFcwxxAQSux0XOI5gIeQkvxEhEsBCt3IAGJu5l9CbopZmCreW/+73078/F6Olq9jrhy4BFOMQgW+IYHfDXlbQJf4DII/Bn+jFR4LbwJ3MfnFp2u1znBY13xTeAhFsuEGe4CnbfKLeCVoq3kapC/VW6RukidFCjvOGdi5TnV+nwxkL03kGNc4wk3a9f8T2/1Lc6q7x1H/wnurONNJrKT1GnY+6j+32HOpjL7U9xHhr0Ue46rHcAvGC+n1V/H5Ab6lHiCg2ABr5hvO9AHWbHwXMex0wLR3z+CZh/b61Y9AAAAAElFTkSuQmCC"/>
+                <br>To Mobile
+            </div>
+            <div class="service">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAXxJREFUSEvtlrEuBVEQhr8rHkBoVAieQEKLQqfxBBQUImo3GjRCL1FQ8AIeQIOWRC8aHoB4AMH+N7Ny7rlnd8/dJVeuO8lmk7Mz55uZM3Nma3RIah3iUgU8bU7flXG+DHgAOARWDXgKbAFv7TjQDli6a8A+MORBXoBt4AT4jHEgFjxlm+qdJ/fmnN65UgR209pXtJl9/wAK058F1rrO8AAYDACfgUtgGFiEYJG+AnVzoiX9IbDSeQzMZEQo6CTwbt/HgQegP0P/FlgHmtLvgmPTegRsepALYCnnKFrS74J3k4rciTjHEFhrGxG2e4mOOE1nEwt+AiYARSFRih+Bsd8Ga/+0uFTpC8BIBFQqlSKOZATV/hZYLs4BV46v3x56V+GN6Ur1OrGZdWzSgvVrZt50G6p+H/fAvVSnNdQdxaWKXgGWndZQZGoXiXuP6+Y6s3XZjHotmLam22bnZtPYr8yQ6J6bK3Y6/XjEGmsxo60KWCNVT6Uf+ioO/EPwFwYecx81eSLCAAAAAElFTkSuQmCC"/>
+                <br>To Bank
+            </div>
+            <div class="service">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAQlJREFUSEvtlssJwkAQhr8ctAIfRwtQQRvwiQXYgTXYgRXYggcL0AJEbUHBm+BRsAbRDBhIQrLrxk2CkDltYPb/dv7dzY5DTuHkxCUOXAbGQBeQcdJ4AWdXZws8/SJR4BawA2pJaRHz9sBIBz4BbYtQT6oJXLyPcMUV4JECVCSHwCEO3HMTjnmAB4DsR1QsDBY0AxqhfGXFKrDJ1RNL+38PNnA6MjWx1QXY1IHC6oBjqntsam04v7C6sDr2dcrscF2B9a803/wVcPumEZgCG4vggFT4ja0D90/GEphnBRZOWs2e8gciYOkGpf2pWq5WCxaeNPETd487QMnSApSHyxJDL2PSwOnVDDLeFiM7H4rEmb8AAAAASUVORK5CYII="/>
+                <br>Balance & History
+            </div>
+            <div class="service">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAXxJREFUSEvtlrEuBVEQhr8rHkBoVAieQEKLQqfxBBQUImo3GjRCL1FQ8AIeQIOWRC8aHoB4AMH+N7Ny7rlnd8/dJVeuO8lmk7Mz55uZM3Nma3RIah3iUgU8bU7flXG+DHgAOARWDXgKbAFv7TjQDli6a8A+MORBXoBt4AT4jHEgFjxlm+qdJ/fmnN65UgR209pXtJl9/wAK058F1rrO8AAYDACfgUtgGFiEYJG+AnVzoiX9IbDSeQzMZEQo6CTwbt/HgQegP0P/FlgHmtLvgmPTegRsepALYCnnKFrS74J3k4rciTjHEFhrGxG2e4mOOE1nEwt+AiYARSFRih+Bsd8Ga/+0uFTpC8BIBFQqlSKOZATV/hZYLs4BV46v3x56V+GN6Ur1OrGZdWzSgvVrZt50G6p+H/fAvVSnNdQdxaWKXgGWndZQZGoXiXuP6+Y6s3XZjHotmLam22bnZtPYr8yQ6J6bK3Y6/XjEGmsxo60KWCNVT6Uf+ioO/EPwFwYecx81eSLCAAAAAElFTkSuQmCC"/>
+                Personal Loan
+            </div>
+            <div class="service">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAXxJREFUSEvtlrEuBVEQhr8rHkBoVAieQEKLQqfxBBQUImo3GjRCL1FQ8AIeQIOWRC8aHoB4AMH+N7Ny7rlnd8/dJVeuO8lmk7Mz55uZM3Nma3RIah3iUgU8bU7flXG+DHgAOARWDXgKbAFv7TjQDli6a8A+MORBXoBt4AT4jHEgFjxlm+qdJ/fmnN65UgR209pXtJl9/wAK058F1rrO8AAYDACfgUtgGFiEYJG+AnVzoiX9IbDSeQzMZEQo6CTwbt/HgQegP0P/FlgHmtLvgmPTegRsepALYCnnKFrS74J3k4rciTjHEFhrGxG2e4mOOE1nEwt+AiYARSFRih+Bsd8Ga/+0uFTpC8BIBFQqlSKOZATV/hZYLs4BV46v3x56V+GN6Ur1OrGZdWzSgvVrZt50G6p+H/fAvVSnNdQdxaWKXgGWndZQZGoXiXuP6+Y6s3XZjHotmLam22bnZtPYr8yQ6J6bK3Y6/XjEGmsxo60KWCNVT6Uf+ioO/EPwFwYecx81eSLCAAAAAElFTkSuQmCC"/>
+                <br>Add Bank Account
+            </div>
+        </div>
+
+        <div class="bill-payment">
+            <h2>Bill Payment by BBPS</h2>
+            <div class="bill-options">
+                <div class="option"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAANtJREFUSEvt1jFqQkEQxvGfdSxs0gQUNVcKOYMkh9DWzkIRTyI5gF0geAfBJgewDNuJT91dX8xLsVvPzH9n+Gb4Whp6rYa4UsAPeMEg85MHfODrXF4M3MEnnjOhx+EjrE7zY+A3LGpAQ+oO3VzwBOOa4JBeaTDWcQHfOvUy6ugBKeIq4kqdQFmnsk4VrfzbAzLDBlMMr0j811X9iG/M8f6X4MY6vtsBCQ5xmVr9QtweT7lmL9jb4Iv7NeDBqVY+HzN7gdfGK3qZ8GDo19jeYugzWenhKR2nV8uI/AFIoygfRX1riQAAAABJRU5ErkJggg=="/><br><br>
+                    Recharge</div>
+                <!-- More options... -->
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <script>
+    // Register button functionality
+    document.getElementById('registerr').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('.main-section').style.display = 'none';  // Hide main section
+        document.querySelector('.login-box').style.display = 'block';
+        document.querySelector('.login-section2').style.display = 'none';
+    });
+
+    // Login button functionality
+    document.getElementById('loginn').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('.main-section').style.display = 'none';  // Hide main section
+        document.querySelector('.login-box').style.display = 'none';
+        document.querySelector('.login-section2').style.display = 'block';
+    });
+
+    // Register form submission
+    document.getElementById('login-form1').addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.querySelector('.login-box').style.display = 'none';
+        document.querySelector('.login-section2').style.display = 'block';
+    });
+
+    // Login form submission
+    document.getElementById('login-form2').addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.querySelector('.login-section1').style.display = 'none';
+        document.querySelector('.login-section2').style.display = 'none';
+        document.querySelector('.paytm-header').style.display = 'block';
+        document.querySelector('.main-section').style.display = 'block';
+    });
+
+    // Recharge functionality
+    document.querySelector('.option').addEventListener('click', function() {
+        document.querySelector('.recharge-form').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.main-section').classList.add('blur');
+    });
+
+    // Operator selection
+    document.querySelectorAll('.operator').forEach(op => {
+        op.addEventListener('click', function() {
+            document.querySelectorAll('.operator').forEach(o => o.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+
+    // Plan type selection
+    document.querySelectorAll('.plan-type').forEach(type => {
+        type.addEventListener('click', function() {
+            document.querySelectorAll('.plan-type').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Plan selection
+    document.querySelectorAll('.plan').forEach(plan => {
+        plan.addEventListener('click', function() {
+            document.querySelectorAll('.plan').forEach(p => p.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+
+    // Recharge form submission
+    document.getElementById('recharge-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const number = document.getElementById('recharge-number').value;
+        const operator = document.querySelector('.operator.selected')?.dataset.operator || 'Unknown';
+        const plan = document.querySelector('.plan.selected .plan-price')?.textContent || 'Unknown';
+        
+        document.getElementById('success-message').textContent = 
+            `Recharge of ${plan} successful for ${number} (${operator})`;
+        document.querySelector('.success-popup').style.display = 'flex';
+        document.querySelector('.recharge-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+    });
+
+    // Cancel recharge
+    document.querySelector('.recharge-form .cancel-btn').addEventListener('click', function() {
+        document.querySelector('.recharge-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+    });
+
+    // Function to fetch and display recent transactions
+    async function updateTransactionHistory() {
+        try {
+            const response = await fetch('/api/transactions/recent');
+            const transactions = await response.json();
+            const transactionsDiv = document.querySelector('.transactions');
+            transactionsDiv.innerHTML = '';
+            
+            transactions.forEach(transaction => {
+                const transactionEl = document.createElement('div');
+                transactionEl.className = 'transaction';
+                
+                let icon = '';
+                switch(transaction.category) {
+                    case 'mobile_payment':
+                        icon = '📱';
+                        break;
+                    case 'bank_transfer':
+                        icon = '🏦';
+                        break;
+                    case 'recharge':
+                        icon = '📶';
+                        break;
+                    default:
+                        icon = '💰';
+                }
+                
+                transactionEl.innerHTML = `
+                    <div class="transaction-details">
+                        <span class="transaction-title">
+                            ${icon} ${transaction.description}
+                            ${transaction.recipient ? `<small>(${transaction.recipient})</small>` : ''}
+                        </span>
+                        <span class="transaction-date">${transaction.date}</span>
+                    </div>
+                    <span class="transaction-amount ${transaction.type}">
+                        ${transaction.type === 'credit' ? '+' : '-'}${transaction.amount}
+                    </span>
+                `;
+                transactionsDiv.appendChild(transactionEl);
+            });
+        } catch (error) {
+            console.error('Error fetching transactions:', error);
+        }
+    }
+
+    // Update balance check functionality
+    document.querySelector('.service:nth-child(3)').addEventListener('click', async function() {
+        document.querySelector('.balance-popup').style.display = 'flex';
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.main-section').classList.add('blur');
+        document.querySelector('.upbar').classList.add('blur');
+        
+        // Fetch and display transactions
+        await updateTransactionHistory();
+        
+        // Fetch and update balance
+        try {
+            const response = await fetch('/api/balance');
+            const { balance } = await response.json();
+            document.querySelector('.balance-amount').textContent = 
+                balance.toLocaleString('en-IN', {
+                    style: 'currency',
+                    currency: 'INR'
+                });
+        } catch (error) {
+            console.error('Error fetching balance:', error);
+        }
+    });
+
+    // Update mobile payment submission to add transaction
+    document.getElementById('mobile-payment-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const mobileNumber = document.getElementById('mobile-number').value;
+        const amount = Number(document.getElementById('amount').value);
+        
+        try {
+            await fetch('/api/transactions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    type: 'debit',
+                    amount: amount,
+                    description: 'Mobile Payment',
+                    category: 'mobile_payment',
+                    recipient: mobileNumber
+                })
+            });
+            
+            // Rest of your existing success handling code...
+            
+        } catch (error) {
+            console.error('Error creating transaction:', error);
+            alert('Transaction failed. Please try again.');
+        }
+    });
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+  <div class="overlay" style="display: none;"></div>
+
+  <!-- Mobile Payment Form -->
+  <div class="mobile-payment-form" style="display: none;">
+    <div class="form-container">
+        <h2>Send Money</h2>
+        <form id="mobile-payment-form">
+            <input 
+                type="tel" 
+                id="mobile-number" 
+                placeholder="Enter Mobile Number" 
+                pattern="[0-9]{10}" 
+                required 
+                aria-label="Mobile Number"
+            >
+            <input 
+                type="number" 
+                id="amount" 
+                placeholder="Enter Amount" 
+                min="1" 
+                required 
+                aria-label="Amount"
+            >
+            <button type="submit" class="submit-btn">Pay Now</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+        </form>
+    </div>
+  </div>
+
+  <!-- Balance Popup -->
+  <div class="balance-popup" style="display: none;">
+    <div class="popup-content">
+        <h3>Account Overview</h3>
+        <p class="balance-amount">₹1,00000</p>
+        <div class="transaction-history">
+            <h4>Recent Transactions</h4>
+            <div class="transactions">
+                <!-- Transactions will be added dynamically -->
+            </div>
+        </div>
+        <button onclick="closeBalancePopup()" class="close-popup">Close</button>
+    </div>
+  </div>
+
+  <!-- Success Popup -->
+  <div class="success-popup" style="display: none;">
+    <div class="popup-content">
+        <h3>Payment Successful!</h3>
+        <p id="success-message"></p>
+        <button onclick="closePopup()" class="close-popup">OK</button>
+    </div>
+  </div>
+
+  <!-- Bank Transfer Form -->
+  <div class="bank-transfer-form" style="display: none;">
+    <div class="form-container">
+        <h2>Bank Transfer</h2>
+        <form id="bank-transfer-form">
+            <select id="bank-select" required aria-label="Select Bank">
+                <option value="" disabled selected>Select Bank</option>
+                <option value="SBI">State Bank of India</option>
+                <option value="HDFC">HDFC Bank</option>
+                <option value="AXIS">Axis Bank</option>
+                <option value="ICICI">ICICI Bank</option>
+                <option value="CANARA">Canara Bank</option>
+            </select>
+            <input 
+                type="text" 
+                id="account-holder" 
+                placeholder="Account Holder Name" 
+                required 
+                aria-label="Account Holder Name"
+            >
+            <input 
+                type="text" 
+                id="account-number" 
+                placeholder="Account Number" 
+                required 
+                pattern="[0-9]+" 
+                aria-label="Account Number"
+            >
+            <input 
+                type="text" 
+                id="ifsc-code" 
+                placeholder="IFSC Code" 
+                required 
+                pattern="^[A-Z]{4}0[A-Z0-9]{6}$" 
+                aria-label="IFSC Code"
+            >
+            <input 
+                type="number" 
+                id="bank-amount" 
+                placeholder="Enter Amount" 
+                min="1" 
+                required 
+                aria-label="Amount"
+            >
+            <button type="submit" class="submit-btn">Transfer Now</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+        </form>
+    </div>
+  </div>
+
+  <!-- Personal Loan Form -->
+  <div class="loan-form" style="display: none;">
+    <div class="form-container">
+        <h2>Personal Loan Calculator</h2>
+        <div class="loan-calculator">
+            <div class="slider-container">
+                <label>Loan Amount: <span id="loan-amount-display">₹5,00,000</span></label>
+                <input 
+                    type="range" 
+                    id="loan-amount" 
+                    min="100000" 
+                    max="1000000" 
+                    step="50000" 
+                    value="500000"
+                >
+            </div>
+            <div class="slider-container">
+                <label>Tenure (months): <span id="tenure-display">12</span></label>
+                <input 
+                    type="range" 
+                    id="loan-tenure" 
+                    min="6" 
+                    max="36" 
+                    step="6" 
+                    value="12"
+                >
+            </div>
+            <div class="loan-details">
+                <div class="detail-item">
+                    <span>Interest Rate</span>
+                    <span>2.5% p.a.</span>
+                </div>
+                <div class="detail-item">
+                    <span>Monthly EMI</span>
+                    <span id="emi-display">₹44,075</span>
+                </div>
+                <div class="detail-item">
+                    <span>Total Interest</span>
+                    <span id="total-interest">₹28,900</span>
+                </div>
+            </div>
+            <button class="apply-btn">Apply Now</button>
+            <button class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Add Bank Account Form -->
+  <div class="bank-add-form" style="display: none;">
+    <div class="form-container">
+        <h2>Link Your Bank Account</h2>
+        <div class="bank-steps">
+            <div class="step active" id="step1">
+                <span class="step-number">1</span>
+                <span class="step-text">Select Bank</span>
+            </div>
+            <div class="step" id="step2">
+                <span class="step-number">2</span>
+                <span class="step-text">Verify Details</span>
+            </div>
+            <div class="step" id="step3">
+                <span class="step-number">3</span>
+                <span class="step-text">Confirm</span>
+            </div>
+        </div>
+        <form id="bank-add-form">
+            <div class="step-content" id="step1-content">
+                <div class="search-box">
+                    <input type="text" id="bank-search" placeholder="Search your bank">
+                </div>
+                <div class="popular-banks">
+                    <h3>Popular Banks</h3>
+                    <div class="bank-grid">
+                        <div class="bank-option" data-bank="SBI">
+                            <img src="data:image/png;base64,..." alt="SBI">
+                            <span>State Bank of India</span>
+                        </div>
+                        <div class="bank-option" data-bank="HDFC">
+                            <img src="data:image/png;base64,..." alt="HDFC">
+                            <span>HDFC Bank</span>
+                        </div>
+                        <!-- Add more banks as needed -->
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="cancel-btn">Cancel</button>
+        </form>
+    </div>
+  </div>
+
+  <!-- Recharge Form -->
+  <div class="recharge-form" style="display: none;">
+    <div class="form-container">
+        <h2>Mobile Recharge</h2>
+        <div class="operator-grid">
+            <div class="operator" data-operator="Airtel">
+                <img src="data:image/png;base64,..." alt="Airtel">
+                <span>Airtel</span>
+            </div>
+            <div class="operator" data-operator="Jio">
+                <img src="data:image/png;base64,..." alt="Jio">
+                <span>Jio</span>
+            </div>
+            <div class="operator" data-operator="Vi">
+                <img src="data:image/png;base64,..." alt="Vi">
+                <span>Vi</span>
+            </div>
+            <div class="operator" data-operator="BSNL">
+                <img src="data:image/png;base64,..." alt="BSNL">
+                <span>BSNL</span>
+            </div>
+        </div>
+        <form id="recharge-form">
+            <input type="tel" id="recharge-number" placeholder="Enter Mobile Number" pattern="[0-9]{10}" required>
+            <div class="plan-selector">
+                <div class="plan-type active" data-type="popular">Popular</div>
+                <div class="plan-type" data-type="data">Data</div>
+                <div class="plan-type" data-type="unlimited">Unlimited</div>
+            </div>
+            <div class="plans-container">
+                <div class="plan">
+                    <div class="plan-price">₹149</div>
+                    <div class="plan-validity">28 Days</div>
+                    <div class="plan-data">1GB/Day</div>
+                </div>
+                <div class="plan">
+                    <div class="plan-price">₹299</div>
+                    <div class="plan-validity">56 Days</div>
+                    <div class="plan-data">1.5GB/Day</div>
+                </div>
+                <div class="plan">
+                    <div class="plan-price">₹499</div>
+                    <div class="plan-validity">84 Days</div>
+                    <div class="plan-data">2GB/Day</div>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Recharge Now</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+        </form>
+    </div>
+  </div>
+
+  <script>
+    let balance = 10000; // Initial balance
+
+    // Mobile payment functionality
+    document.querySelector('.service:first-child').addEventListener('click', function() {
+        document.querySelector('.mobile-payment-form').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.main-section').classList.add('blur');
+        document.querySelector('.upbar').classList.add('blur');
+    });
+
+    // Balance check functionality
+    document.querySelector('.service:nth-child(3)').addEventListener('click', function() {
+        document.querySelector('.balance-popup').style.display = 'flex';
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.main-section').classList.add('blur');
+        document.querySelector('.upbar').classList.add('blur');
+    });
+
+    // Form submission
+    document.getElementById('mobile-payment-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const mobileNumber = document.getElementById('mobile-number').value;
+        const amount = Number(document.getElementById('amount').value);
+        
+        if(mobileNumber.length !== 10) {
+            alert('Please enter a valid 10 digit mobile number');
+            return;
+        }
+
+        if(amount > balance) {
+            alert('Insufficient balance!');
+            return;
+        }
+        
+        // Update balance
+        balance -= amount;
+        document.querySelector('.balance-amount').textContent = `₹${balance.toLocaleString()}`;
+        
+        // Show success popup with amount details
+        document.getElementById('success-message').textContent = `₹${amount.toLocaleString()} has been successfully sent to ${mobileNumber}`;
+        document.querySelector('.success-popup').style.display = 'flex';
+        
+        // Reset and close form
+        this.reset();
+        document.querySelector('.mobile-payment-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+    });
+
+    // Function to close the success popup
+    function closePopup() {
+        document.querySelector('.success-popup').style.display = 'none';
+    }
+
+    // Close balance popup
+    function closeBalancePopup() {
+        document.querySelector('.balance-popup').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+    }
+
+    // Cancel button functionality
+    document.querySelector('.cancel-btn').addEventListener('click', function() {
+        document.querySelector('.mobile-payment-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+        document.getElementById('mobile-payment-form').reset();
+    });
+
+    // Bank transfer functionality
+    document.querySelector('.service:nth-child(2)').addEventListener('click', function() {
+        document.querySelector('.bank-transfer-form').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.main-section').classList.add('blur');
+        document.querySelector('.upbar').classList.add('blur');
+    });
+
+    // Bank transfer form submission
+    document.getElementById('bank-transfer-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const bankName = document.getElementById('bank-select').value;
+        const accountHolder = document.getElementById('account-holder').value;
+        const accountNumber = document.getElementById('account-number').value;
+        const amount = Number(document.getElementById('bank-amount').value);
+        
+        if(amount > balance) {
+            alert('Insufficient balance!');
+            return;
+        }
+        
+        // Update balance
+        balance -= amount;
+        document.querySelector('.balance-amount').textContent = `₹${balance.toLocaleString()}`;
+        
+        // Show success message
+        document.getElementById('success-message').textContent = 
+            `₹${amount.toLocaleString()} has been successfully transferred to ${accountHolder}'s ${bankName} account`;
+        document.querySelector('.success-popup').style.display = 'flex';
+        
+        // Reset and close form
+        this.reset();
+        document.querySelector('.bank-transfer-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+    });
+
+    // Cancel bank transfer
+    document.querySelector('.bank-transfer-form .cancel-btn').addEventListener('click', function() {
+        document.querySelector('.bank-transfer-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+        document.getElementById('bank-transfer-form').reset();
+    });
+
+    // Personal Loan functionality
+    document.querySelector('.service:nth-child(4)').addEventListener('click', function() {
+        document.querySelector('.loan-form').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.main-section').classList.add('blur');
+        document.querySelector('.upbar').classList.add('blur');
+    });
+
+    // Loan calculator functionality
+    function calculateEMI(principal, tenure) {
+        const ratePerMonth = 10.5 / 12 / 100;
+        const emi = principal * ratePerMonth * Math.pow(1 + ratePerMonth, tenure) / 
+                   (Math.pow(1 + ratePerMonth, tenure) - 1);
+        const totalAmount = emi * tenure;
+        const totalInterest = totalAmount - principal;
+        return { emi, totalInterest };
+    }
+
+    function updateLoanDetails() {
+        const amount = parseInt(document.getElementById('loan-amount').value);
+        const tenure = parseInt(document.getElementById('loan-tenure').value);
+        const { emi, totalInterest } = calculateEMI(amount, tenure);
+
+        document.getElementById('loan-amount-display').textContent = 
+            '₹' + amount.toLocaleString();
+        document.getElementById('tenure-display').textContent = tenure;
+        document.getElementById('emi-display').textContent = 
+            '₹' + Math.round(emi).toLocaleString();
+        document.getElementById('total-interest').textContent = 
+            '₹' + Math.round(totalInterest).toLocaleString();
+    }
+
+    // Add event listeners for sliders
+    document.getElementById('loan-amount').addEventListener('input', updateLoanDetails);
+    document.getElementById('loan-tenure').addEventListener('input', updateLoanDetails);
+
+    // Apply button functionality
+    document.querySelector('.loan-form .apply-btn').addEventListener('click', function() {
+        const amount = parseInt(document.getElementById('loan-amount').value);
+        document.getElementById('success-message').textContent = 
+            `Your loan application for ₹${amount.toLocaleString()} has been submitted successfully!`;
+        document.querySelector('.success-popup').style.display = 'flex';
+        document.querySelector('.loan-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+    });
+
+    // Cancel button functionality
+    document.querySelector('.loan-form .cancel-btn').addEventListener('click', function() {
+        document.querySelector('.loan-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+    });
+
+    // Add Bank Account functionality
+    document.querySelector('.service:last-child').addEventListener('click', function() {
+        document.querySelector('.bank-add-form').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.main-section').classList.add('blur');
+        document.querySelector('.upbar').classList.add('blur');
+    });
+
+    // Cancel bank account addition
+    document.querySelector('.bank-add-form .cancel-btn').addEventListener('click', function() {
+        document.querySelector('.bank-add-form').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.main-section').classList.remove('blur');
+        document.querySelector('.upbar').classList.remove('blur');
+    });
+
+    // Bank selection
+    document.querySelectorAll('.bank-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const bankName = this.dataset.bank;
+            document.getElementById('success-message').textContent = 
+                `${bankName} has been successfully linked to your account!`;
+            document.querySelector('.success-popup').style.display = 'flex';
+            document.querySelector('.bank-add-form').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+            document.querySelector('.main-section').classList.remove('blur');
+            document.querySelector('.upbar').classList.remove('blur');
+        });
+    });
+  </script>
+</body>
+</html>
